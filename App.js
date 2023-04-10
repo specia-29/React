@@ -1,19 +1,20 @@
 import React from 'react';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {name: 'にんじゃわんこ'};
+  }
+
   render() {
     return (
     	<div>
-    	  <h1>こんにちは、にんじゃわんこさん！</h1>
-        {/* buttonタグ内に、コンソールに名前を出力するonClickイベントを追加してください */}
-        <button onClick={() => {console.log('ひつじ仙人')}}>
-          ひつじ仙人
-         </button>
+    	  <h1>こんにちは、{this.state.name}さん！</h1>
+    	  {/* onClickの処理に、stateを変更する処理を加えてください */}
+        <button onClick={() => {this.setState({name: "ひつじ仙人"})}}>ひつじ仙人</button>
 
-        {/* buttonタグ内に、コンソールに名前を出力するonClickイベントを追加してください */}
-        <button onClick={() => {console.log('にんじゃわんこ')}}>
-          にんじゃわんこ
-        </button>
+        {/* onClickの処理に、stateを変更する処理を加えてください */}
+        <button onClick={() => {this.setState({name: "にんじゃわんこ"})}}>にんじゃわんこ</button>
 
       </div>
     );
